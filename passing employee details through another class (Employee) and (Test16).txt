@@ -1,0 +1,63 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.mrprk;
+
+/**
+ *
+ * @author ATIM
+ */
+public class Employee {
+   int id;
+   String name;
+   String company;
+   String salary;
+   String address;
+   public Employee(int id, String name, String company, String salary, String address){
+   super();
+   this.id =id;
+   this.name=name;
+   this.company=company;
+   this.salary=salary;
+   this.address=address;
+   }
+}
+
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.mrprk;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+
+/**
+ *
+ * @author ATIM
+ */
+public class Test16 {
+    public static void main(String[] args) {        
+    ArrayList <Employee> empdata = new ArrayList<Employee>();
+    empdata.add(new Employee(101, "Atim", "Girmiti","10000","Kolkata"));
+    empdata.add(new Employee(102,"Abheek", "TCS","11000", "Bangalore"));
+    empdata.add(new Employee(103, "Ram","Infosys","13000", "Mumbai"));
+    empdata.add(new Employee(104, "Shyam", "IBM", "18000", "Channei"));
+    empdata.add(new Employee(105, "Ramesh", "Wipro", "9000", "Kolkata"));
+    Iterator <Employee> itr = empdata.iterator();
+    while(itr.hasNext()){
+        Employee e = itr.next();
+        if(e.id==101){
+        itr.remove();
+        }
+    }
+    for(Employee ee :empdata){
+        System.out.println(ee.id+" "+ee.name+" "+" "+ee.company+" "+ee.salary+" "+ee.address);
+    }
+    }
+   
+}
